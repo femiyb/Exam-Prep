@@ -1,0 +1,222 @@
+[
+    {
+        "question": "Which of the following best describes the process of asymmetric cryptography?",
+        "options": [
+            "It involves using the same key for both encryption and decryption.",
+            "It uses different keys for the encryption and decryption process.",
+            "It does not involve the use of any keys for the encryption or decryption process.",
+            "It only involves the use of keys for decryption, not encryption."
+        ],
+        "correctAnswer": "It uses different keys for the encryption and decryption process.",
+        "id": 1
+    },
+    {
+        "question": "Which of the following algorithms is commonly used for secure data encryption?",
+        "options": [
+            "Rapid Algorithms",
+            "ElGamal Algorithm",
+            "Prime Algorithm",
+            "Advanced Model Algorithm"
+        ],
+        "correctAnswer": "ElGamal Algorithm",
+        "id": 2
+    },
+    {
+        "question": "What is the process called that converts plain text into an unreadable series of characters in cryptography?",
+        "options": [
+            "Decryption",
+            "Symmetric Encryption",
+            "Asymmetric Encryption",
+            "Encryption"
+        ],
+        "correctAnswer": "Encryption",
+        "id": 3
+    },
+    {
+        "question": "In the context of cryptography, what does the term 'symmetric encryption' refer to?",
+        "options": [
+            "It involves a process where two different keys - a public key for encryption and a private key for decryption - are used.",
+            "It refers to a method where multiple keys are used to encode and decode the same message.",
+            "It refers to a method where the same key is used for both encryption and decryption of a message.",
+            "It involves a process where the encryption key is made publicly available while the decryption key remains private."
+        ],
+        "correctAnswer": "It refers to a method where the same key is used for both encryption and decryption of a message.",
+        "id": 4
+    },
+    {
+        "question": "Which of the following cryptographic algorithms is considered to be a symmetric encryption algorithm?",
+        "options": [
+            "RSA",
+            "Diffie-Hellman",
+            "Advanced Encryption Standard (AES)",
+            "Elliptic Curve Cryptography (ECC)"
+        ],
+        "correctAnswer": "Advanced Encryption Standard (AES)",
+        "id": 5
+    },
+    {
+        "question": "Which cryptographic algorithm is used by SSL and TLS for data protection during transmission?",
+        "options": [
+            "Data Encryption Standard (DES)",
+            "Advanced Encryption Standard (AES)",
+            "Rivest-Shamir-Adleman (RSA)",
+            "Blowfish"
+        ],
+        "correctAnswer": "Rivest-Shamir-Adleman (RSA)",
+        "id": 6
+    },
+    {
+        "question": "Which of the following is not a type of modern Cryptography?",
+        "options": [
+            "Symmetric-key Cryptography",
+            "Asymmetric-key Cryptography",
+            "Hash Functions",
+            "Visible Cryptography"
+        ],
+        "correctAnswer": "Visible Cryptography",
+        "id": 7
+    },
+    {
+        "question": "Which of the following cryptographic systems uses a pair of keys for encryption and decryption?",
+        "options": [
+            "Symmetric Key Cryptography",
+            "Asymmetric Key Cryptography",
+            "Data Encryption Standard (DES)",
+            "Identity-Based Cryptography"
+        ],
+        "correctAnswer": "Asymmetric Key Cryptography",
+        "id": 8
+    },
+    {
+        "question": "Which of the following is known as a mathematical method for encrypting and decrypting information in cryptography?",
+        "options": [
+            "Hashing",
+            "Symmetric Key Algorithm",
+            "Asymmetric Key Algorithm",
+            "Elliptic Curve Cryptography"
+        ],
+        "correctAnswer": "Asymmetric Key Algorithm",
+        "id": 9
+    },
+    {
+        "question": "Which of the following is a symmetric-key algorithm utilized in cryptography?",
+        "options": [
+            "RSA",
+            "SHA-256",
+            "DES",
+            "ECC"
+        ],
+        "correctAnswer": "DES",
+        "id": 10
+    },
+    {
+        "question": "In the field of cryptography, which of the following refers to a method for protecting data in transit or storage that involves converting it into a coded version to prevent unauthorized access?",
+        "options": [
+            "Hash function",
+            "Asymmetric cryptography",
+            "Symmetric cryptography",
+            "Encryption"
+        ],
+        "correctAnswer": "Encryption",
+        "id": 11
+    },
+    {
+        "question": "In the realm of cryptography, which of the following refers to a system where both parties use a single key for both encryption and decryption?",
+        "options": [
+            "Asymmetric encryption",
+            "Symmetric encryption",
+            "Hash function",
+            "Public key infrastructure"
+        ],
+        "correctAnswer": "Symmetric encryption",
+        "id": 12
+    },
+    {
+        "question": "Which encryption algorithm is commonly used to secure sensitive data and is known for its block cipher design?",
+        "options": [
+            "RSA",
+            "SHA-256",
+            "AES",
+            "Diffie-Hellman"
+        ],
+        "correctAnswer": "AES",
+        "id": 13
+    },
+    {
+        "question": "What is the term used to describe the process of converting plaintext into ciphertext in Cryptography?",
+        "options": [
+            "Decryption",
+            "Encryption",
+            "Hashing",
+            "Factoring"
+        ],
+        "correctAnswer": "Encryption",
+        "id": 14
+    },
+    {
+        "question": "Which of the following is considered to be the most secure type of cryptography?",
+        "options": [
+            "Symmetric-key cryptography",
+            "Quantum cryptography",
+            "Hash function",
+            "Caesar cipher"
+        ],
+        "correctAnswer": "Quantum cryptography",
+        "id": 15
+    },
+    {
+        "question": "What type of cryptographic technique allows two parties to generate a shared secret key for communication even if their conversation is overheard by a third party?",
+        "options": [
+            "Symmetric encryption",
+            "Asymmetric encryption",
+            "Diffie-Hellman key exchange",
+            "Hash function"
+        ],
+        "correctAnswer": "Diffie-Hellman key exchange",
+        "id": 16
+    },
+    {
+        "question": "Which type of cryptography uses two mathematically linked keys, one for encryption and the other for decryption?",
+        "options": [
+            "Symmetric Cryptography",
+            "Asymmetric Cryptography",
+            "Quantum Cryptography",
+            "Hash Functions"
+        ],
+        "correctAnswer": "Asymmetric Cryptography",
+        "id": 17
+    },
+    {
+        "question": "What is the primary purpose of a digital signature in cryptography?",
+        "options": [
+            "It encrypts the data to prevent unauthorized access.",
+            "It verifies the identity of the party involved in a communication.",
+            "It prevents the internet service provider from tracking one's internet usage.",
+            "It accelerates the speed at which data is transmitted over the internet."
+        ],
+        "correctAnswer": "It verifies the identity of the party involved in a communication.",
+        "id": 18
+    },
+    {
+        "question": "Which of the following algorithms is an example of asymmetric cryptography?",
+        "options": [
+            "Advanced Encryption Standard (AES)",
+            "Triple Data Encryption Standard (3DES)",
+            "RSA",
+            "Blowfish"
+        ],
+        "correctAnswer": "RSA",
+        "id": 19
+    },
+    {
+        "question": "What type of encryption is known for using two mathematically linked, but not identical keys?",
+        "options": [
+            "Symmetric Encryption",
+            "Asymmetric Encryption",
+            "Block Cipher",
+            "Stream Cipher"
+        ],
+        "correctAnswer": "Asymmetric Encryption",
+        "id": 20
+    }
+]
