@@ -70,17 +70,18 @@ body {
   }
   
   /* Styling for theory answer textarea */
-  .theory-answer {
+  textarea.user-answer {
     width: 100%;
-    padding: 10px;
+    height: 20vh;
     margin-bottom: 20px;
     border: 1px solid #ced4da;
     border-radius: 5px;
     resize: vertical;
   }
+
+
   
   /* View Answer Button */
   .view-answer {
     margin-right: 10px;
-  }
-  
+  }  
