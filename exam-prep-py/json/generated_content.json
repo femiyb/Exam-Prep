@@ -218,5 +218,225 @@
         ],
         "correctAnswer": "Asymmetric Encryption",
         "id": 20
+    },
+    {
+        "question": "What type of cyber threat occurs when an attacker disguises themselves as a trustworthy entity to acquire sensitive information, often through email communication?",
+        "options": [
+            "Phishing",
+            "Worm",
+            "Sniffing",
+            "Spoofing"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 21
+    },
+    {
+        "question": "Which of the following protocols is used to secure information transmitted over the internet?",
+        "options": [
+            "TCP/IP",
+            "HTTP",
+            "SSL/TSL",
+            "FTP"
+        ],
+        "correctAnswer": "SSL/TSL",
+        "id": 22
+    },
+    {
+        "question": "Which of the following terms refers to a deceptive operation designed to steal sensitive data like credit card numbers, usernames, passwords, etc.?",
+        "options": [
+            "DDoS Attack",
+            "Packet Sniffing",
+            "Phishing",
+            "Browser Hijacking"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 23
+    },
+    {
+        "question": "Which of the following protocols is commonly used for secure web browsing that encrypts and protects sensitive information?",
+        "options": [
+            "FTP (File Transfer Protocol)",
+            "HTTP (HyperText Transfer Protocol)",
+            "SMTP (Simple Mail Transfer Protocol)",
+            "HTTPS (HyperText Transfer Protocol Secure)"
+        ],
+        "correctAnswer": "HTTPS (HyperText Transfer Protocol Secure)",
+        "id": 24
+    },
+    {
+        "question": "What is a common method used by cyber criminals to trick users into revealing sensitive information, such as usernames, passwords, or credit card numbers?",
+        "options": [
+            "Phishing",
+            "Firewalls",
+            "Encryption",
+            "VPNs"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 25
+    },
+    {
+        "question": "Which of the following techniques is commonly used by hackers to gain sensitive information through deceiving users?",
+        "options": [
+            "Phishing",
+            "Anti-Virus Scanning",
+            "Secure Socket Layering",
+            "Firewall Bypassing"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 26
+    },
+    {
+        "question": "What protocol is commonly used for secure web browser communication in internet and cyber security?",
+        "options": [
+            "Hyper Text Transfer Protocol (HTTP)",
+            "File Transfer Protocol (FTP)",
+            "Internet Control Message Protocol (ICMP)",
+            "Hyper Text Transfer Protocol Secure (HTTPS)"
+        ],
+        "correctAnswer": "Hyper Text Transfer Protocol Secure (HTTPS)",
+        "id": 27
+    },
+    {
+        "question": "Which of the following protocols is used for network security and is typically associated with creating a Virtual Private Network (VPN)?",
+        "options": [
+            "HyperText Transfer Protocol (HTTP)",
+            "Simple Mail Transfer Protocol (SMTP)",
+            "Internet Message Access Protocol (IMAP)",
+            "Secure Shell (SSH)"
+        ],
+        "correctAnswer": "Secure Shell (SSH)",
+        "id": 28
+    },
+    {
+        "question": "Which of the following is a common method used by cyber criminals to steal personal information?",
+        "options": [
+            "Password Generation",
+            "Spyware Installation",
+            "Email Preservation",
+            "Cookie Blocking"
+        ],
+        "correctAnswer": "Spyware Installation",
+        "id": 29
+    },
+    {
+        "question": "Which of the following is NOT a common method used by cyber criminals to gain unauthorized access to user data?",
+        "options": [
+            "Phishing",
+            "Brute Force Attack",
+            "Malware",
+            "Server Encryption"
+        ],
+        "correctAnswer": "Server Encryption",
+        "id": 30
+    },
+    {
+        "question": "What is a common technique used by cybercriminals to retrieve sensitive information such as usernames and passwords, by pretend to be a trustworthy entity?",
+        "options": [
+            "IP Spoofing",
+            "Keylogging",
+            "Phishing",
+            "Firewall"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 31
+    },
+    {
+        "question": "What is a common technique used by cybercriminals known as \"phishing\"?",
+        "options": [
+            "Sending emails that appear to be from reputable sources to induce individuals to reveal personal information, such as passwords and credit card numbers.",
+            "Using a firewall to protect a computer or network from unauthorized access.",
+            "Encrypting data to prevent unauthorized access.",
+            "Implementing a Virtual Private Network (VPN) to enhance privacy and security."
+        ],
+        "correctAnswer": "Sending emails that appear to be from reputable sources to induce individuals to reveal personal information, such as passwords and credit card numbers.",
+        "id": 32
+    },
+    {
+        "question": "Which of the following is NOT a method commonly employed by cybercriminals and hackers for data theft?",
+        "options": [
+            "Phishing",
+            "Denial of Service Attack",
+            "Encryption",
+            "Malware"
+        ],
+        "correctAnswer": "Encryption",
+        "id": 33
+    },
+    {
+        "question": "Which of the following terms is used to describe the practice of sending fraudulent emails that resemble emails from reputable sources to extract personal information or credentials?",
+        "options": [
+            "Hacking",
+            "Spoofing",
+            "Phishing",
+            "Malware"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 34
+    },
+    {
+        "question": "Which protocol is typically considered the most secure for transmitting data over the internet?",
+        "options": [
+            "FTP",
+            "HTTP",
+            "HTTPS",
+            "DNS"
+        ],
+        "correctAnswer": "HTTPS",
+        "id": 35
+    },
+    {
+        "question": "Which among the following is not a common type of cyber attack?",
+        "options": [
+            "Phishing",
+            "SQL Injection",
+            "DDoS Attack",
+            "Kinetic Attack"
+        ],
+        "correctAnswer": "Kinetic Attack",
+        "id": 36
+    },
+    {
+        "question": "What is the term used to describe a method where an attacker convinces a user to click on a malicious link or download a harmful file, often through deceptive emails or messages?",
+        "options": [
+            "Botnet",
+            "DDoS Attack",
+            "Phishing",
+            "Firewall"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 37
+    },
+    {
+        "question": "What is the term for a scamming practice that involves sending fraudulent emails purporting to be from reputable companies in order to convince individuals to reveal personal details, like passwords or credit card numbers?",
+        "options": [
+            "Malware",
+            "Botnet",
+            "Phishing",
+            "Spyware"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 38
+    },
+    {
+        "question": "What is the main purpose of a firewall in computer network security?",
+        "options": [
+            "Increase network speed",
+            "Prevent unauthorized access",
+            "Provide data storage",
+            "Enhance graphic interface"
+        ],
+        "correctAnswer": "Prevent unauthorized access",
+        "id": 39
+    },
+    {
+        "question": "Which of these terms best describes an attempt to trick individuals into revealing sensitive information such as passwords and credit card numbers by impersonating a legitimate organization or individual?",
+        "options": [
+            "Malware",
+            "Phishing",
+            "Keylogging",
+            "Encryption"
+        ],
+        "correctAnswer": "Phishing",
+        "id": 40
     }
 ]

@@ -1,50 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../styles/Quiz.css'; // Ensure this path matches your CSS file's location
+import '../styles/Quiz.css';
 
 const Quiz = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { module, examType } = location.state || {}; // These are passed from the previous component
+  const { module, examType } = location.state || {}; // Ensure these are passed correctly from the Home component
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState('');
-  const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
+  const [correctAnswersCount, setCorrectAnswersCount] = useState(0); // New state to track correct answers
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const [showAnswer, setShowAnswer] = useState(false);
   const [results, setResults] = useState([]);
+
+
   
 
   useEffect(() => {
     setIsLoading(true);
     if (!module || !examType) {
-        setError('Module and exam type are required.');
-        setIsLoading(false);
-        return;
+      setError('Module or exam type is missing.');
+      setIsLoading(false);
+      return;
     }
 
-
-    const fetchQuestions = async () => {
-      setIsLoading(true);
+    const loadQuestions = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:5006/get-questions-${module}-${examType}`);
-        if (!response.ok) throw new Error('Network response was not ok.');
-        const data = await response.json();
-        // Randomly pick 30 questions
-        const shuffledQuestions = data.sort(() => 0.5 - Math.random()).slice(0, 30);
-        setQuestions(shuffledQuestions);
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
+        const questionsModule = await import(`../json/questions-${module}-${examType}.json`);
+        setQuestions(questionsModule.default);
+      } catch (err) {
+        console.error("Failed to load questions", err);
         setError('Failed to load questions. Please try again.');
+        setQuestions([]);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     };
 
-    fetchQuestions();
-}, [module, examType]);
+    loadQuestions();
+  }, [module, examType]);
 
-const handleOptionChange = (event) => {
+  const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
