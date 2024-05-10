@@ -32,7 +32,7 @@ const Quiz = () => {
     const fetchQuestions = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://127.0.0.1:5006/get-questions-${module}-${examType}`);
+        const response = await fetch(`https://exam-prep-41bea73ae791.herokuapp.com/get-questions-${module}-${examType}`);
         if (!response.ok) throw new Error('Network response was not ok.');
         const data = await response.json();
         // Randomly pick 30 questions
@@ -51,7 +51,7 @@ const Quiz = () => {
 // Submit and pass theory answers
 const submitTheoryAnswer = async () => {
   try {
-    const response = await fetch(`http://127.0.0.1:5008/evaluate-answer-${module}-${examType}`, {
+    const response = await fetch(`https://exam-prep-41bea73ae791.herokuapp.com/evaluate-answer-${module}-${examType}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
