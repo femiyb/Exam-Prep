@@ -10,9 +10,9 @@ CORS(app)
 evaluate_answer_bp = Blueprint('evaluate_answer', __name__)
 
 # Load your Gemini API key from an environment variable (recommended for security)
-gemini_api_key = os.getenv("AIzaSyDnuSNnRJWHhE-tnFap-anvGP6MFgbcxXA")
+gemini_api_key = os.getenv("gemini_api_key")
 if not gemini_api_key:
-    raise ValueError("AIzaSyDnuSNnRJWHhE-tnFap-anvGP6MFgbcxXA environment variable not set.")
+    raise ValueError("gemini_api_key environment variable not set.")
 client = gemini.RemoteClient(api_key=gemini_api_key)
 
 # Cache for question data (to avoid repeated file reads)
