@@ -1,71 +1,85 @@
 import os
 import json
-import re
-from flask import Flask, Blueprint, request, jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-import gemini
+import re
+import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
-evaluate_answer_bp = Blueprint('evaluate_answer', __name__)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
+<<<<<<< HEAD
 # Load your Gemini API key from an environment variable (recommended for security)
 gemini_api_key = os.getenv("gemini_api_key")
 if not gemini_api_key:
     raise ValueError("gemini_api_key environment variable not set.")
 client = gemini.RemoteClient(api_key=gemini_api_key)
+=======
+# Gemini API Configuration
+gemini_api_key = os.environ.get("GEMINI_API_KEY")
+if not gemini_api_key:
+    raise ValueError("GEMINI_API_KEY environment variable not set.")
+genai.configure(api_key=gemini_api_key)
+>>>>>>> Add geminiai api
 
-# Cache for question data (to avoid repeated file reads)
-question_cache = {}
+# Instantiate the model
+model = genai.GenerativeModel('gemini-pro')
 
-@evaluate_answer_bp.route('/evaluate-answer-<module>-<examType>', methods=['POST'])
+@app.route('/evaluate-answer/<module>/<examType>', methods=['POST'])
 def evaluate_answer(module, examType):
+    print(f"Received request for module: {module}, examType: {examType}")
+    data = request.json
+    question_id = data.get('questionId')
+    user_answer = data.get('answer')
+    print(f"question_id: {question_id}, user_answer: {user_answer}")
+
+    # Load the questions and proposed answers
     try:
-        data = request.json
-        question_id = data.get('questionId')
-        user_answer = data.get('answer')
+        with open(f'json/questions-{module}-{examType}.json', 'r', encoding='utf-8') as file:
+            questions = json.load(file)
+    except FileNotFoundError:
+        return jsonify({"error": "Questions file not found."}), 404
 
-        # Load questions from JSON, with caching
-        questions_key = f"{module}-{examType}"
-        if questions_key not in question_cache:
-            with open(f"{module}-{examType}.json", 'r') as f:
-                question_cache[questions_key] = json.load(f)
-        questions = question_cache[questions_key]
+    # Find the question and its proposed answer by ID
+    question_item = next((item for item in questions if item["id"] == question_id), None)
+    if not question_item:
+        return jsonify({"error": "Question not found."}), 404
 
-        # Check if the question exists
-        question_item = next((q for q in questions if q['questionId'] == question_id), None)
-        if not question_item:
-            return jsonify({"error": "Question not found"}), 404
+    proposed_answer = question_item.get('proposedAnswer')
 
-        proposed_answer = question_item.get('proposedAnswer')
+    # Crafting the prompt to include a request for a rating out of 10
+    prompt_message = (
+        f"Question: {question_item['question']}\n"
+        f"User Answer: {user_answer}\n"
+        f"Evaluate this answer and provide a rating out of 10. Write out a perfect reply."
+    )
 
-        # Construct the prompt for Gemini
-        prompt_message = (
-            f"**Question:** {question_item['question']}\n"
-            f"**User Answer:** {user_answer}\n"
-            f"**Evaluate this answer to the question and provide a rating out of 10.**\n"
+    try:
+        # Generate Response from Gemini
+        response = model.generate_content(
+            contents=[{"parts": [{"text": prompt_message}]}],
+            generation_config={
+                "temperature": 0.7,  # Adjust this for creativity
+                "max_output_tokens": 1000  # Limit response length
+            }
         )
 
-        # Call Gemini API
-        response = client.generate_content(prompt=prompt_message, max_tokens=100, temperature=0.7)
-        full_response = response.text.strip()
+        # Extract the full response text
+        full_response = response.candidates[0].content.parts[0].text
 
-        # Extract rating with regex
-        rating_match = re.search(r"Rating:\s*(\d+)", full_response)
+        # Extract Rating (Adjust this regex based on Gemini's response format)
+        rating_match = re.search(r"(\d+)/10", full_response)
         rating = int(rating_match.group(1)) if rating_match else None
 
         return jsonify({"evaluation": full_response, "rating": rating, "proposedAnswer": proposed_answer}), 200
 
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON data"}), 400
-    except gemini.GeminiException as e:
-        return jsonify({"error": f"Gemini API error: {e}"}), 500
-    except FileNotFoundError:
-        return jsonify({"error": "Question data not found"}), 404
-    except AttributeError as e: # Catch regex match error
-        return jsonify({"error": f"Unable to extract rating: {e}"}), 500
-    except Exception as e:  # Catch-all
-        return jsonify({"error": f"An error occurred: {e}"}), 500
+    except Exception as e:
+        return jsonify({"error": f"Error: {e}"}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5006)))

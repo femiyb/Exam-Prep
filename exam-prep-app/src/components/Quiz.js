@@ -92,7 +92,7 @@ const Quiz = () => {
 
   const submitTheoryAnswer = async () => {
     try {
-      const response = await fetch(`https://exam-prep-41bea73ae791.herokuapp.com/evaluate-answer-${module}-${examType}`, {
+      const response = await fetch(`http://127.0.0.1:5006/evaluate-answer/${module}/${examType}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
