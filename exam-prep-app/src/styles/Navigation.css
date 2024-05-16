@@ -1,0 +1,53 @@
+/* Container for the navigation bar */
+.nav-container {
+  background-color: #2c3e50; /* A deep, neutral blue for a professional look */
+  padding: 0 20px; /* Horizontal padding for breathing space */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Unordered list styling for horizontal display */
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: left; /* Align items to the left */
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for each navigation item */
+.nav-item {
+  padding: 15px 10px; /* Vertical and horizontal padding for touch targets */
+}
+
+/* Link styling with transition for interactive feedback */
+.nav-link {
+  color: #ecf0f1; /* Light color for contrast */
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover and focus states for links */
+.nav-link:hover, .nav-link:focus {
+  background-color: #34495e; /* Slightly darker background on hover */
+  color: #bdc3c7; /* Change color for visual feedback */
+  border-radius: 5px; /* Rounded corners for a softer look */
+}
+
+/* Special styling for the logout button to differentiate it */
+.nav-item:last-child {
+  margin-left: auto; /* Pushes the logout button to the right side */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: space-between; /* Adjust content spacing for smaller screens */
+  }
+
+  .nav-item {
+    padding: 10px 5px; /* Reduce padding in small screens */
+  }
+}
