@@ -18,7 +18,7 @@ function Navigation() {
         <li className="nav-item">
           <Link to="/about" className="nav-link">About</Link>
         </li>
-        <li style={{ display: "inline", marginRight: 10 }}>
+        <li className="nav-item">
                     <LogoutButton /> {/* Logout button added here */}
         </li>
       </ul>

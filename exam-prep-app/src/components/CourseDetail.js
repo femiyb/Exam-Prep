@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import courseData from '../json/course-detail-ICS.json';
+import courseData from '../json/course-detail-ASE.json';
 import '../styles/CourseDetail.css';
 
 function CourseDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
     const course = courseData[id];
-
     const [selectedExamType, setSelectedExamType] = useState('');
 
     const [visibleSection, setVisibleSection] = useState(null);
@@ -144,11 +143,13 @@ function CourseDetail() {
                         <option value="MC">Multiple Choice</option>
                         <option value="Theory">Theory</option>
                         <option value="Essay">Essays</option>
-                        <option value="CaseStudies">Case Studies</option>
+                        <option value="Case-Studies">Case Studies</option>
                     </select>
                     <button onClick={handleStartQuiz}>Start Quiz</button>
                 </div>
             )}
+             <button onClick={() => navigate('/courses')}>Back to Courses</button>
+
         </div>
     );
 }

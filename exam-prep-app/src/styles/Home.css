@@ -1,47 +1,72 @@
+/* Base layout settings for the home page */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); /* A fresh and vibrant gradient */
+  color: #073b4c; /* A dark, readable color */
+}
+
+/* Container for content in the home page */
 .home-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1 {
+  color: #073b4c;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+/* Paragraph styles for description and motivational quote */
+p {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #336e7b;
+  margin-bottom: 20px;
+}
+
+/* Enhanced button styling */
+.auth-buttons .button {
+  margin: 10px;
+  padding: 12px 25px;
+  background-color: #34ace0;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Button hover and focus effects */
+.auth-buttons .button:hover, .auth-buttons .button:focus {
+  background-color: #227093;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Motivational quote styling, italicized and centered */
+.motivational-quote {
+  font-style: italic;
+  color: #2980b9;
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+  .home-container {
+    width: 100%; /* Full width for small screens */
+    border-radius: 0; /* Remove border radius on smaller screens */
   }
-  
-  .home-container h1 {
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  .home-container label {
-    display: block;
-    margin: 20px auto;
-    font-size: 18px;
-  }
-  
-  .home-container select {
-    width: 100%;
-    padding: 8px 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    background-color: #f8f9fa;
-    cursor: pointer;
-  }
-  
-  .home-container button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .home-container button:hover {
-    background-color: #0056b3;
-  }
-  
+}

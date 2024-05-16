@@ -11,19 +11,11 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
-<<<<<<< HEAD
-# Load your Gemini API key from an environment variable (recommended for security)
-gemini_api_key = os.getenv("gemini_api_key")
-if not gemini_api_key:
-    raise ValueError("gemini_api_key environment variable not set.")
-client = gemini.RemoteClient(api_key=gemini_api_key)
-=======
 # Gemini API Configuration
 gemini_api_key = os.environ.get("GEMINI_API_KEY")
 if not gemini_api_key:
     raise ValueError("GEMINI_API_KEY environment variable not set.")
 genai.configure(api_key=gemini_api_key)
->>>>>>> Add geminiai api
 
 # Instantiate the model
 model = genai.GenerativeModel('gemini-pro')

@@ -1,46 +1,57 @@
+/* Container for the courses section */
 .courses-container {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Light gray background for a clean look */
+  color: #333; /* Dark gray text for readability */
+  font-family: 'Arial', sans-serif; /* Consistent font for clarity */
+  margin: 20px;
+  border-radius: 8px; /* Soft rounded corners for a modern feel */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
-.h2 {
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
+/* Heading style for the course list */
+h2 {
+  text-align: center; /* Center alignment for heading */
+  color: #2c3e50; /* Darker shade for emphasis */
+  font-size: 24px; /* Larger text for importance */
+  margin-bottom: 20px; /* Space below the heading */
 }
 
+/* Grid layout for courses */
 .course-list {
-  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a flexible number of columns */
+  gap: 15px; /* Space between grid items */
+  list-style-type: none; /* Remove default list styling */
   padding: 0;
-  margin: 0;
 }
 
+/* List items representing individual courses */
 .course-list li {
-  padding: 12px 18px;
-  margin-bottom: 8px;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer;
+  padding: 15px; /* Padding for touch targets */
+  background-color: #ffffff; /* White background for items */
+  color: #2c3e50; /* Dark text for contrast */
+  border: 1px solid #ccc; /* Subtle border for definition */
+  border-radius: 5px; /* Rounded edges for style */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for feedback */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Use flex to align text properly inside the grid */
+  align-items: center; /* Center align the text vertically */
+  justify-content: center; /* Center align the text horizontally */
+  text-align: center; /* Ensure text is centered if it wraps */
 }
 
-.course-list li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+/* Hover and active states for courses */
+.course-list li:hover, .course-list li:active {
+  background-color: #e9ecef; /* Lighter background on hover */
+  transform: translateY(-2px); /* Slight raise effect */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Shadow for 3D effect */
 }
 
-.error {
-  color: #ff6b6b;
-  text-align: center;
+/* Responsive adjustments for better display on smaller devices */
+@media (max-width: 768px) {
+  .course-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column size for smaller screens */
+  }
 }
 
-.loading {
-  text-align: center;
-  color: #4f4f4f;
-}

@@ -258,6 +258,49 @@ const Quiz = () => {
     );
   }
 
+  if (examType === "Case-Studies") {
+    const currentCaseStudy = questions[currentQuestionIndex];
+    
+    return (
+        <div className="quiz-container">
+            <h2>Quiz: {module} - {examType}</h2>
+            <div className="options-container">
+                <div className="question-container">
+                    <p className="question-text">{currentCaseStudy.question}</p>
+                    <p className="description-text"><strong>Description:</strong> {currentCaseStudy.description}</p>
+                    <p className="hint-text"><strong>Hint:</strong> {currentCaseStudy.hint}</p>
+                    <ul className="tasks-list">
+                        {currentCaseStudy.tasks.map((task, index) => (
+                            <li key={index}>{task}</li>
+                        ))}
+                    </ul>
+                    {showAnswer[currentQuestionIndex] && (
+                        <div className="answer-details">
+                            <h3>Answer Details:</h3>
+                            {/* Render additional answer details here if needed */}
+                        </div>
+                    )}
+                    <button
+                        className="button"
+                        onClick={() => toggleShowAnswer(currentQuestionIndex)}
+                    >
+                        {showAnswer[currentQuestionIndex] ? 'Hide Details' : 'Show Details'}
+                    </button>
+                </div>
+                <button className="button" onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0}>
+                    Previous
+                </button>
+                <button className="button" onClick={handleNextQuestion}>
+                    Next
+                </button>
+                <button className="button finish-exam" onClick={finishExam}>
+                    Finish Exam
+                </button>
+            </div>
+        </div>
+    );
+}
+
   return null; // Default return to handle any unexpected cases
 };
 
