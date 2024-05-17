@@ -1,8 +1,9 @@
 {
     "ITSG": {
-      "Title": "Information Technology Strategy and Governance 800",
-      "Overview": {
-        "Objectives": [
+      "Course Title": "Information Technology Strategy and Governance 800",
+      "Course Overview": {
+        "Course Title": "Advanced Software Engineering 800",
+        "Course Objectives": [
           "Understand the principles and practices of IT governance and strategic alignment.",
           "Develop skills to manage IT risks and ensure compliance with regulatory requirements.",
           "Learn to design IT strategies that support organizational goals and improve business performance.",
@@ -15,7 +16,7 @@
         ],
         "Credits": 15
       },
-      "Curriculum": {
+      "Curriculum Outline": {
         "Core Topics": [
           "Principles of IT Governance",
           "Strategic Alignment of IT and Business",
@@ -24,12 +25,12 @@
           "Organizational Impact of IT",
           "Leadership in IT Governance"
         ],
-        "Seminar_Workshop": [
+        "Seminar/Workshop Details": [
           "Workshop on Case Studies in IT Governance",
           "Seminar on Current Trends in IT Strategy and Compliance"
         ]
       },
-      "Syllabus": [
+      "Detailed Syllabus": [
         {
           "Week": 1,
           "Topic": "Introduction to IT Governance",
@@ -93,8 +94,8 @@
       },
       "Assessment Methods": {
         "Grading Policy": {
-          "Assignments": 50,
-          "Exam": 50
+          "Assignments": 40,
+          "Exam": 60
         },
         "Assignment Guidelines": {
           "Format": "All assignments must follow the APA formatting guidelines",

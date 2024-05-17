@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navigation.css';
 import LogoutButton from './LogoutButton'; // Adjust the path based on your file structure
 
 
 
 function Navigation() {
+  const isAuthenticated = localStorage.getItem('userToken');
+
   return (
     <nav className="nav-container">
       <ul className="nav-list">
@@ -18,9 +20,14 @@ function Navigation() {
         <li className="nav-item">
           <Link to="/about" className="nav-link">About</Link>
         </li>
-        <li className="nav-item">
+       
+        {isAuthenticated && (
+          <>
+          <li className="nav-item log-out">
                     <LogoutButton /> {/* Logout button added here */}
         </li>
+          </>
+        )}
       </ul>
     </nav>
   );

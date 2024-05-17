@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import '../styles/Register.css';
 
 function Register() {
@@ -83,6 +85,8 @@ function Register() {
         />
         {error && <p className="error">{error}</p>}
         <button type="submit">Register</button>
+        <Link to="/login" className="button">Login</Link>
+
       </form>
     </div>
   );

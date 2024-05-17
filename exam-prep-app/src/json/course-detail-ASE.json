@@ -94,8 +94,8 @@
       },
       "Assessment Methods": {
         "Grading Policy": {
-          "Assignments": 50,
-          "Exam": 50
+          "Assignments": 40,
+          "Exam": 60
         },
         "Assignment Guidelines": {
           "Format": "All assignments must be submitted in PDF format.",

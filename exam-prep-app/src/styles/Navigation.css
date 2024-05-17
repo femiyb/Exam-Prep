@@ -37,7 +37,7 @@
 }
 
 /* Special styling for the logout button to differentiate it */
-.nav-item:last-child {
+.nav-item.log-out {
   margin-left: auto; /* Pushes the logout button to the right side */
 }
 

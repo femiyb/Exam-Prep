@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import courseData from '../json/course-detail-ASE.json';
 import '../styles/CourseDetail.css';
 
 function CourseDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const course = courseData[id];
+    const [course, setCourse] = useState(null);
     const [selectedExamType, setSelectedExamType] = useState('');
-
     const [visibleSection, setVisibleSection] = useState(null);
+
+    useEffect(() => {
+        async function fetchCourseData() {
+            try {
+                const module = await import(`../json/course-detail-${id}.json`);
+                setCourse(module[id]);
+            } catch (error) {
+                console.error('Error loading the course data:', error);
+            }
+        }
+
+        fetchCourseData();
+    }, [id]);
     const toggleSection = (section) => {
         setVisibleSection(visibleSection === section ? null : section);
     };

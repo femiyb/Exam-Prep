@@ -1,66 +1,93 @@
+/* General styles for the results container */
 .results-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: #f7f7f7; /* Neutral soft background */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+/* Heading styles */
+h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Summary text */
+p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* List of results */
+.results-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Individual result items */
+.result-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  border-left: 5px solid; /* Color defined by class */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.result-item.correct {
+  border-color: #28a745; /* Green for correct */
+  background-color: #e6f4ea; /* Very light green background */
+}
+
+.result-item.incorrect {
+  border-color: #dc3545; /* Red for incorrect */
+  background-color: #fdecea; /* Very light red background */
+}
+
+/* Styling question and answer details */
+.question, .your-answer, .correct-answer {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.correct-answer {
+  font-weight: bold;
+  color: #28a745; /* Green for correct answers */
+}
+
+/* Link to home or other quizzes */
+.try-again-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.try-again-link:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Responsive design for better mobile experience */
+@media (max-width: 768px) {
+  .results-container {
+      width: 95%;
+      padding: 20px;
   }
-  
-  .results-container h2 {
-    color: #333;
-    margin-bottom: 20px;
+  h2, p {
+      font-size: 16px;
   }
-  
-  .results-container p {
-    font-size: 18px;
-    margin: 20px 0;
-  }
-  
-  .try-again-link {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .try-again-link:hover {
-    background-color: #0056b3;
-  }
-  
-  .results-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .result-item {
-    background-color: #f8f9fa;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
-  }
-  
-  .correct {
-    color: green;
-  }
-  
-  .incorrect {
-    color: red;
-  }
-  
-  .question {
-    font-weight: bold;
-  }
-  
-  .your-answer {
-    margin-bottom: 5px;
-  }
-  
-  .correct-answer {
-    font-style: italic;
-  }
-  
+}

@@ -77,7 +77,7 @@ const Quiz = () => {
   };
 
   const finishExam = () => {
-    if (examType === "Theory") {
+    if ((examType === "Theory") || (examType === "Essay") || (examType === "Case-Studies")) {
       navigate('/');
     } else {
       navigate('/results', {
@@ -92,7 +92,7 @@ const Quiz = () => {
 
   const submitTheoryAnswer = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:5006/evaluate-answer/${module}/${examType}`, {
+      const response = await fetch(`http://127.0.0.1:5000/evaluate-answer/${module}/${examType}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -187,7 +187,7 @@ const Quiz = () => {
           ))}
           <button className="button" onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0}>Previous</button>
           <button className="button" type="submit">Next</button>
-          <button className="button finish-exam" onClick={finishExam}>Finish Exam</button>
+          <div><button className="button finish-exam" onClick={finishExam}>Finish Exam</button></div>
         </form>
       </div>
     );

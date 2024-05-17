@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Quiz from './components/Quiz';
@@ -7,8 +7,10 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Courses from './components/Courses';
 import CourseDetail from './components/CourseDetail';
-import Navigation from './components/Navigation'; // Import the Navigation component
+import Navigation from './components/Navigation';
+import ForgotPassword from './components/ForgotPassword'; // Import the ForgotPassword component
 import { AuthProvider } from './AuthContext'; 
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const [quizSettings, setQuizSettings] = useState({
@@ -18,20 +20,39 @@ function App() {
 
   return (
     <Router>
-      <AuthProvider> {/* Wrapping entire app in AuthProvider */}
-        <Navigation /> {/* Use the Navigation component */}
-          <Routes>
-            <Route path="/" element={<Home updateQuizSettings={setQuizSettings} />} />
-            <Route path="/quiz" element={<Quiz {...quizSettings} />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/courses/:id" element={<CourseDetail />} />
-            <Route path="/course/:id" exact component={CourseDetail} />
-            <Route path="/quiz/:id/:type" component={Quiz} />
-            
-          </Routes>
+      <AuthProvider>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home updateQuizSettings={setQuizSettings} />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Add Forgot Password route */}
+          <Route path="/quiz" element={
+            <ProtectedRoute>
+              <Quiz {...quizSettings} />
+            </ProtectedRoute>
+          } />
+          <Route path="/results" element={
+            <ProtectedRoute>
+              <Results />
+            </ProtectedRoute>
+          } />
+          <Route path="/courses" element={
+            <ProtectedRoute>
+              <Courses />
+            </ProtectedRoute>
+          } />
+          <Route path="/courses/:id" element={
+            <ProtectedRoute>
+              <CourseDetail />
+            </ProtectedRoute>
+          } />
+          <Route path="/quiz/:id/:type" element={
+            <ProtectedRoute>
+              <Quiz />
+            </ProtectedRoute>
+          } />
+        </Routes>
       </AuthProvider>
     </Router>
   );
