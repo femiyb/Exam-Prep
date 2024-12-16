@@ -2,6 +2,7 @@
 
 Exam Prep Application
 An interactive web application designed to help students prepare for exams by offering dynamic study tools, real-time content, and AI-powered assistance using OpenAI integration.
+Note that there are two server-sides here, one is Node.JS, while the other is Python
 
 
 Features
